@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>包装类</title>
+  </head>
+  <body>
+    <script>
+      /*
+        基本数据类型
+          - 	String Number Boolean Null Undefined
+        引用数据类型 Object
+
+        在JS中为我们提供了三个包装类，通过这三个包装类可以将基本数据类型的数据转换为对象
+
+        String()
+          - 可以将基本数据类型字符串转换为String对象
+          - 可以使用基本字符串去调用，因为系统自动会包装类型，临时转换为对象
+        Number()
+          - 可以将基本数据类型的数字转换为Number对象Boolean()
+          但是注意：我们在实际应用中不会使用基本数据类型的对象，	如果使用基本数据类型的对象，在做一些比较时可能会带来一些不可预期的结果
+      */
+
+      //创建一个Number类型的对象
+      var num = new Number(3);
+      console.log("Number = " + num);// 3
+      console.log("numberType = "+ typeof num); // object
+      // 向num中添加一个属性
+      num.hello = "abcdefg";
+      console.log("num.hello = " + num.hello);
+      //基本类型添加属性
+      var a = 3;
+      a.hello = "nihao";
+      console.log("基本类型添加属性 = " + a.hello); // undefined
+
+      var str = new String("hello");
+      console.log("string = "+ str); //hello
+      console.log("stringType = "+ typeof str); // object
+
+
+      var bool = new Boolean(true);
+      console.log("Boolean = "+ bool); // true
+      console.log("BooleanType = "+ typeof bool); // object
+
+      var bool2 = true;
+      // console.log(bool == bool2); //true
+
+      var b = new Boolean(true);
+      /*
+        在传递的时候要把这个false 对象转换为 Boolean 值，既然转成了对象 那么都是true，所以无论是true/false都会运行
+      */
+      var b = new Boolean(false);
+
+      if(b) {
+        alert("我运行了~~~");
+      }
+      
+      // 开发中禁止如上使用，一般都是系统自用。
+      // 举例为什么要明白
+
+      /*
+        基本数据类型，中没有方法，没地方存
+        方法和属性只能添加给对象，不能添加给基本数据类型
+        当我们对一些基本数据类型的值去调用属性和方法时，浏览器会临时使用包装类转换为对象，然后在调动对象属性和方法，调用完以后，在将其转换为基本数据类型
+      */
+      var s = "123";
+
+      // 将s的值转换为字符串
+      s = s.toString();
+
+      s.hello = "nihaoya"; // 第一次转换
+      // 转换了2次，第一次添加到s.hello中，开始转换 销毁，然后第二次 因为第一次销毁值没有 所以unde..，
+      console.log(s.hello); // undefined 第二次转换 
+       
+      console.log(s); // 123
+      console.log(typeof s); // string
+    </script>
+  </body>
+</html>

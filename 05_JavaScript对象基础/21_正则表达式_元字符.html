@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式_元字符</title>
+  </head>
+  <body>
+    <script>
+      /*
+        检查一个字符串中是否含有 .
+          . 表示任意字符
+        在正则表达式中使用\作为转义字符
+        \. 表示 .
+        \\ 表示 \
+
+        注意：使用构造函数时，由于它的参数是一个字符串，而 \ 是字符串中转义字符
+        如果要使用 \ 则需要使用 \\ 来代替
+      */
+      var reg = /./; // true
+      console.log(reg.test("b"));
+
+      var reg = /\./; // false
+      console.log(reg.test("b")); 
+
+      var reg = /\./; // true
+      console.log(reg.test(".b")); 
+
+      var reg = /\\/; // true
+      console.log(reg.test("b.\\")); 
+      console.log("b.\\"); 
+
+
+      //构造函数
+      reg = new RegExp("\.");
+      console.log(reg.test("!@#!@#!")); // true
+      console.log(reg); // /./
+
+      reg = new RegExp("\\.");
+      console.log(reg); // /\./
+
+      reg = new RegExp("\\\\");
+      console.log(reg); // /\\/
+
+
+
+      /*
+			 * \w
+			 * 	- 任意字母、数字、_  [A-z0-9_]
+			 * \W
+			 * 	- 除了字母、数字、_  [^A-z0-9_]
+			 * \d
+			 * 	- 任意的数字 [0-9]
+			 * \D
+			 * 	- 除了数字 [^0-9]
+			 * \s
+			 * 	- 空格
+			 * \S
+			 * 	- 除了空格
+			 * \b
+			 * 	- 单词边界
+			 * \B
+			 * 	- 除了单词边界
+			 */
+      reg = /\w/;
+      console.log(reg.test(123)); // true
+      console.log(reg.test("sdfs")); // true
+      console.log(reg.test("_")); // true
+      console.log(reg.test("@#$%^&* = " + "@#$%^&*")); // false
+
+      reg = /\W/;
+      console.log(reg.test("@#$%^&* = " + "@#$%^&*")); // true
+      console.log(reg.test("_")); // false
+      console.log(reg.test("sdfs")); // false
+      console.log(reg.test(123)); // false
+
+
+      reg = /\d/;
+      console.log(reg.test("abc")); // false
+      console.log(reg.test(123)); // true
+
+      reg = /\D/;
+      console.log(reg.test("abc")); // true
+      console.log(reg.test(123)); // false
+
+
+      reg = /\s/;
+      console.log(reg.test("123")); //false
+      console.log(reg.test("12 3")); //true
+
+      reg = /\S/;
+      console.log(reg.test("123")); //true
+      console.log(reg.test("12 3")); //true
+      console.log(reg.test("   ")); //false
+
+
+      // 创建一个正则表达式检查一个字符串中是否含有单词child
+      reg = /child/; // 普通邪法
+      console.log(reg.test("hellochildren")); //true
+      console.log(reg.test("hello children")); //true
+      console.log(reg.test("hello child ren")); // true
+
+      reg = /\bchild\b/; // 单词边界
+      console.log(reg.test("hellochildren")); // false
+      console.log(reg.test("hello children")); // false
+      console.log(reg.test("hello child ren")); // true
+
+      reg = /\bchild\b/; // 除了单词边界
+      console.log(reg.test("hellochildren")); // false
+      console.log(reg.test("hello children")); // false
+      console.log(reg.test("hello child ren")); // true
+    </script>
+  </body>
+</html>

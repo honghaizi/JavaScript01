@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式_练习</title>
+  </head>
+  <body>
+    <script>
+      //接收一个用户的输入
+      var str = prompt("请输入一个用户名：");
+      var str = "     he       llo       ";
+
+      // 去掉字符串中的前后的空格
+      // 去掉空格就是使用“”来替换空格
+      console.log("用户名1：" + str);
+      
+      // 去除所有空格
+      // str = str.replace(/\s/g, "");
+
+      // 去除开头的空格
+      // str = str.replace(/^\s*/, "");
+      // 去除结尾的空格
+      // srt = str.replace(/\s*$/, "");
+
+      // 空字符串 无用
+      // srt = str.replace(/^\s*$/, "");
+
+      // 整合
+      str = str.replace(/^\s*|\s*$/g, "");
+      // str = str.replace(/^\s+|\s+$/g, "");
+      
+      console.log("用户名2：" + str);
+
+    </script>
+  </body>
+</html>

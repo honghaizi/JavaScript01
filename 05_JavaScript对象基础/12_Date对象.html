@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date对象</title>
+  </head>
+  <body>
+    <script>
+      /*
+        Date对象
+          - 在JS中使用Date对象来表示一个时间
+      */
+
+      //创建一个Date对象
+			//如果直接使用构造函数创建一个Date对象，则会封装为当前代码执行的时间
+      var d = new Date();
+      //Thu Jun 11 2020 17:10:10 GMT+0800 (中国标准时间)
+      // console.log(d);
+
+
+      //创建一个指定的时间对象
+			//需要在构造函数中传递一个表示时间的字符串作为参数
+			//日期的格式  月份/日/年 时:分:秒
+      var d2 = new Date("2/18/2011 11:10:30");
+      //Fri Feb 18 2011 11:10:30 GMT+0800 (中国标准时间)
+      // console.log(d2);
+
+
+      /*
+			 * getDate()
+			 * 	- 获取当前日期对象是几日
+			 */
+       var date = d2.getDate();
+      //  console.log(date); // 18
+
+      /*
+			 * getDay()
+			 * 	- 获取当前日期对象时周几
+			 * 	- 会返回一个0-6的值
+			 * 		0 表示周日
+			 * 		1表示周一
+			 * 		。。。
+			 */
+			var day = d2.getDay();
+			console.log("获取当前日期对象时周几 = " + day); //5
+      
+
+			/*
+			 * getMonth()
+			 * d2 = new Date("12/18/2011 11:10:30");
+			 * - 获取当前时间对象的月份
+			 * 	- 会返回一个0-11的值
+			 * 		0 表示1月
+			 * 		1 表示2月
+			 * 		11 表示12月
+			 */
+			var month = d2.getMonth();
+      console.log("获取当前时间对象的月份 = " + month); // 1
+
+
+      /*
+			 * getFullYear()
+			 * 	- 获取当前日期对象的年份
+			 */
+			var year = d2.getFullYear();
+      console.log("获取当前日期对象的年份 = " + year); // 2011
+
+
+      /*
+			 * getTime()
+			 * 	- 获取当前日期对象的时间戳
+			 * 	- 时间戳，指的是从格林威治标准时间的1970年1月1日，0时0分0秒
+			 * 		到当前日期所花费的毫秒数（1秒 = 1000毫秒）
+			 * 	- 计算机底层在保存时间时使用都是时间戳
+			 */
+       var time = d2.getTime();
+      //  console.log(time); // 1297998630000
+
+      // 毫秒/秒/分钟/小时/年
+      //41.15926655251142  = 41年
+      console.log("毫秒/秒/分钟/小时/年" + time/1000/60/60/24/365); 
+
+      // 中国时间 系统默认，和格林有8小时时差
+      var d3 = new Date("1/1/1970 0:0:0");
+      time = d3.getTime();
+      console.log(time); //-28800000 格林差8小时
+      
+
+      // 获取当前时间戳
+      time = Date.now();
+      console.log("获取当前时间戳 = " + time); //1591867596903
+
+
+      //可以利用时间戳来测试代码的性能
+      // 例如：测试
+      
+      var start = Date.now(); //开始
+
+      for (var i = 0; i < 100; i++) {
+        console.log(i);
+      }
+
+      var end = Date.now(); //结束 
+
+      // 减去的时间差就是耗费时间  // 15毫秒
+      console.log("执行了："+(end - start)+"毫秒");
+      
+    </script>
+  </body>
+</html>

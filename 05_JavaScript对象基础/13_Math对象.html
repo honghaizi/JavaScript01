@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math对象</title>
+  </head>
+  <body>
+    <script>
+      /*
+			 * Math
+			 * 	- Math和其他的对象不同，它不是一个构造函数，
+			 * 		它属于一个工具类不用创建对象，它里边封装了数学运算相关的属性和方法
+			 * 	- 比如
+			 * 		Math.PI 表示的圆周率
+			 */
+      // 它属于一个工具类不用创建对象
+      //  var math01 = new Math(); error
+
+      console.log("圆周率= " + Math.PI);
+
+
+      /*
+			 * abs()可以用来计算一个数的绝对值
+			 */
+			console.log("abs = " + Math.abs(-1));
+
+      /*
+			 * Math.ceil()
+			 * 	- 可以对一个数进行向上取整，小数位只有有值就自动进1
+			 * Math.floor()
+			 * 	- 可以对一个数进行向下取整，小数部分会被舍掉
+			 * Math.round()
+			 * 	- 可以对一个数进行四舍五入取整
+			 */
+			console.log("向上取整 = " + Math.ceil(1.1));
+			console.log("向下取整 = " + Math.floor(1.99));
+			console.log("四舍五入 = " + Math.round(1.5));
+
+
+      /*
+			 * Math.random()
+			 * 	- 可以用来生成一个0-1之间的随机数
+			 *  - 生成一个0-10的随机数
+			 * 	- 生成一个0-x之间的随机数
+			 * 		Math.round(Math.random()*x)
+			 * 
+			 * 	- 生成一个1-10
+			 * 	- 生成一个x-y之间的随机数
+			 * 		Math.round(Math.random()*(y-x)+x)
+			 */
+       console.log("随机数 = " + Math.random());
+       
+      for (var i = 0; i < 30; i++) {
+        // 0-10以内的随机数 不包括10
+        //  console.log(" 0-10以内的随机数 = " + Math.random()*10);
+
+        // 0-10以内的随机数 取整 四舍五入
+        // console.log(" 0-10以内的随机数取整 = " + Math.round(Math.random()*10));
+        // console.log(" 0-20以内的随机数取整 = " + Math.round(Math.random()*20));
+
+        // 1-10以内的随机数 取整 四舍五入
+        console.log("1-10以内的随机数取整 = " + Math.round(Math.random()*9)+1);
+        // console.log("1-10以内的随机数取整 = " + Math.round(Math.random()*10-1)+1);
+
+        // 生成1-6之间的随机数
+        console.log("1-6以内的随机数取整 = " + Math.round(Math.random()*5+1));
+      } 
+
+
+      /*
+      * max() 可以获取多个数中的最大值
+      * min() 可以获取多个数中的最小值
+      */
+      var max = Math.max(10,45,30,100);
+      var min = Math.min(10,45,30,100);
+      console.log("最大值 = " + max);
+      console.log("最小值 = " + min);
+
+
+      /*
+			 * Math.pow(x,y)
+			 * 	返回x的y次幂
+			 */
+			console.log("返回x的y次幂 = " + Math.pow(12,3));
+
+
+      /*
+			 * Math.sqrt()
+			 *  用于对一个数进行开方运算
+			 */
+			console.log("开方运算 = " + Math.sqrt(2));
+    
+    </script>
+  </body>
+</html>

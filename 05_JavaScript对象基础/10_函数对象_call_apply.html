@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call()和apply()</title>
+  </head>
+  <body>
+    <script>
+      function fun() {
+        alert("我是fun函数");
+      }
+
+      // 函数方法调用
+      // fun();
+
+      /* call() 和 appl()
+        - 这两个方法都是函数对象的的方法，需要通过函数对象来调用
+          -  对象方法 fun();
+          - 对象 fun;
+        - 当对函数调动call()和apple()都会调用函数执行
+      */
+
+      function fun2() {
+        alert("我是fun函数");
+      }
+
+      // fun2();
+      // fun2.call();
+      // fun2.apply();
+
+
+      /*
+        在调用call和apple可以将一个对象指定为第一个参数
+          此时这个对象将会成为函数执行时的this
+          也就是可以修改函数上下文执行时的对象
+      */
+      function fun3() {
+        // alert("我是fun函数");
+        alert(this);
+      }
+
+      // 用于把对象作为参数传递
+      var obj1 = {};
+
+      // 指定为对象
+      // fun3.call(obj1); // object对象调用
+      // fun3.apple(obj1); // object对象调用
+      // fun3(); // window对象调用
+
+
+      // 可以修改函数上下文执行时的对象
+      function fun4() {
+        alert(this.name);
+      }
+
+      var obj2 = {
+        name: "obj2",
+        sayName:function() {
+          alert(this.name);
+        }
+      }
+      var obj2_1 = {
+        name: "obj2_1"
+      }
+
+      // obj2.sayName(); // obj2
+      // obj2.sayName.apply(obj2_1); // obj2_1
+      // obj2.sayName.call(obj2_1); // obj2_1
+
+
+      // call()方法可以将实参在对象之后依次传递
+      // apply()方法需要将实参封装到一个数组中统一传递
+      function fun5(a, b) {
+        console.log("a = " + a);
+        console.log("b = " + b);
+        // alert(this);
+      }
+
+      var obj3 = {
+        name: "obj3",
+        sayName:function() {
+          alert(this.name);
+        }
+      }
+      var obj3_1 = {
+        name: "obj3_1"
+      }
+
+      // fun5.call(obj3) // a和b = undefined
+      // fun5.call(obj3, 2, 3) // a2 b3
+
+      // fun5.apply(obj3, 2, 3) // Argument list has wrong type 参数列表类型错误
+      fun5.apply(obj3, [2, 3]) // a2 b3
+
+      /* 总结
+        this的情况：
+          - 1.以函数形式调用时，this永远都是window
+          - 2.以方法的形式调用时，this是调用方法的对象
+          - 3.以构造函数的形式调用时，this是新创建的那个对象
+          - 4.使用call和apply调用时，this是指定的那个对象
+      
+      */
+    </script>
+  </body>
+</html>

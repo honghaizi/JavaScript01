@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this案例</title>
+  </head>
+  <body>
+    <script>
+      // 创建一个name变量
+      var name = "全局";
+
+      // 创建一个fun()函数
+      function fun() {
+        // 不指定this的情况下，函数局部没有，输出全局name
+        // console.log(name);
+
+        // 当前是obj的方法来调用所以 this会找到obj中的name
+        console.log(this.name);
+      }
+
+      //创建两个对象
+			var obj = {
+					name:"孙悟空",
+					sayName:fun
+			};
+			
+			var obj2 = {
+					name:"沙和尚",
+					sayName:fun
+			};
+
+      //希望调用obj.sayName()时可以输出obj的名字
+			//obj.sayName();
+			
+			obj2.sayName();
+    </script>
+  </body>
+</html>
