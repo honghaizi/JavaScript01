@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环-循环的跳转</title>
+  </head>
+  <body>
+    <script>
+      //不能在if语句中使用break和continue,如果在for循环中则可以用因为，作用是在for上。
+
+      // 默认情况下, 所有的循环都会按照正常的顺序, 依次执行
+      // 1.需求一: 5这个数字不打印
+      // continue: 跳出本次, 执行下一次循环
+      for (var i = 0; i < 10; i++) {
+        if (i === 5 || i === 8) {
+          continue;
+        }
+        console.log(i);
+        console.log("Hello World");
+      }
+
+      // 2.需求二: 5这个数字, 直接整个循环跳出
+      // break: 直接跳出循环, 后续所有的循环体都不再执行
+      for (var i = 0; i < 10; i++) {
+        if (i === 5) {
+          break;
+        }
+        console.log(i);
+        console.log("nihao zhishan");
+      }
+    </script>
+  </body>
+</html>
