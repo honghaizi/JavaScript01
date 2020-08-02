@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组-数组的遍历操作</title>
+  </head>
+  <body>
+    <script>
+      // 1.定义了数组
+      var names = ["why", "lilei", "hanmeimei", "lucy"];
+
+      // 2.对数组进行遍历
+      // console.log(names[0]);
+      // console.log(names[1]);
+      // console.log(names[2]);
+      // console.log(names[3]);
+      // console.log(names[4]);
+
+      // 注意事项: 访问数组的最后一个元素 -> length - 1位置
+      for (var i = 0; i < names.length; i++) {
+        console.log("这是 \“" + names[i] + "\” 数组");
+      }
+
+
+      //2. 创建一个数组
+      var arr = ["孙悟空","猪八戒","沙和尚","唐僧","白骨精"];
+
+      //所谓的遍历数组，就是将数组中所有的元素都取出来
+      console.log(arr[0]);
+      console.log(arr[1]);
+      console.log(arr[2]);
+      console.log(arr[3]);
+      console.log(arr[4]);
+
+      for (var i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+      }
+			
+    </script>
+  </body> 
+</html>

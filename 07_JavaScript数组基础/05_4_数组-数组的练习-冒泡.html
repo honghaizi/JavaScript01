@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组-数组的练习-冒泡</title>
+  </head>
+  <body>
+    <script>
+      // 1.定义数组
+      var nums = [10, 323, 8, 10, 66, 789, 128, 99, 222, 88, 43];
+
+      // 2.对数组进行排序
+      // 需求一: 将最大的数字想办法放到最后(冒泡思想)
+      // 0 1
+      // 1 2
+      // 2 3
+
+      //1
+      for (var i = 0; i < nums.length-1; i++) {
+        if (nums[i] > nums[i+1]) {
+          var temp = nums[i];
+          nums[i] = nums[i+1];
+          nums[i+1] = temp
+        }
+      }
+      console.log("1次排序结果：" + nums);
+
+      //2
+      for (var i = 0; i < nums.length-1-1; i++) {
+        if (nums[i] > nums[i+1]) {
+          var temp = nums[i];
+          nums[i] = nums[i+1];
+          nums[i+1] = temp
+        }
+      }
+      console.log("2次排序结果：" + nums);
+
+      //3 
+      for (var i = 0; i < nums.length-1-1-1; i++) {
+        if (nums[i] > nums[i+1]) {
+          var temp = nums[i];
+          nums[i] = nums[i+1];
+          nums[i+1] = temp
+        }
+      }
+      console.log("3次排序结果：" + nums);
+
+      //,,,,,
+
+      for (var j = nums.length-1; j > 0; j--) {
+        for (var i = 0; i < j; i++) {
+          if (nums[i] > nums[i+1]) {
+            var temp = nums[i];
+            nums[i] = nums[i+1];
+            nums[i+1] = temp
+          }
+        }
+      }
+      console.log("冒泡排序结果：" + nums);
+      
+      /* 代码分析
+      [10, 323, 8, 10, 66, 789, 128, 99, 222, 88, 43];
+
+         第一次，j = nums.length-1  
+                nums.leng-1 > 0   g
+                进入内循环
+                i=0 , 0 < j       g
+      */
+    </script>
+  </body>
+</html>

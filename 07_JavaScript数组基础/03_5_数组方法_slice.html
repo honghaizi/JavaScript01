@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组方法_slice</title>
+  </head>
+  <body>
+    <script>
+      var arr2 = ["孙悟空","猪八戒","沙和尚","唐僧","白骨精"];
+
+      /* slice()
+        可以用来从数组提取指定元素
+        该方法不会改变元素数组，而是将截取到的元素封装到一个新的数组中返回
+          参数：
+            1.截取开始的位置的索引，包含开始索引
+            2.截取结束的位置的索引，不包含结束索引
+              第二个参数可以省略不写，此时会截取从开始索引往后的所有元素
+              索引可以传递一个负值，如果传递一个负值，则从后往前计算
+                -1 倒数第一个  -2 倒数第二个....
+      */ 
+
+      var result = arr2.slice(1, 4);
+      console.log("slice(1, 4) = " + result); // "猪八戒","沙和尚","唐僧"
+
+      result = arr2.slice(3);
+      console.log("slice(3) = " + result); // "唐僧","白骨精"
+
+      result = arr2.slice(1, -2);
+      console.log("slice(1, -2) = " + result); //  猪八戒,沙和尚 
+    </script>
+  </body>
+</html>

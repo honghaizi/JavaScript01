@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组方法_join</title>
+  </head>
+  <body>
+    <script>
+			var arr = ["孙悟空","猪八戒","沙和尚"];
+      
+      /*
+        join() 
+          - 该方法可以将数组转换为一个字符串
+          - 该方法不会对原数组产生影响，而是将转换后的字符串作为结果返回
+          - 在join()中可以指定一个字符串作为参数，这个字符串将会成为数组元素中元素的连接符
+            如果不指定连接符，默认使用逗号，作为连接符
+            如果不想使用任何符号则使用 “”
+      */
+
+			arr = ["孙悟空","猪八戒","沙和尚","唐僧"];
+
+      result = arr.join("-");
+      console.log(result);
+    </script>
+  </body>
+</html>

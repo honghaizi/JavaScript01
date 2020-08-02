@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组-数组的练习题目一</title>
+  </head>
+  <body>
+    <script>
+      // 1.定义数组
+      var names = ["lilei", "hanmeimei", "tom", "poly", "lily"];
+
+
+      // 1.正向遍历
+      for (var i = 0; i < names.length; i++) {
+        console.log(names[i]);
+      }
+
+
+      // 2.反向的遍历
+      for (var i = names.length - 1; i >= 0; i--) {
+        console.log(i);
+        console.log(names[i]);
+      }
+
+
+      // 3.将数组中所有的元素使用-进行分割
+      // 效果: "lilei-hanmeimei-tom-poly-lily"
+      /*
+        1.将所有的name拼接到message中
+        2.在所有的名字后面+ “-”
+        3.将最后一个”-”去除掉
+      */
+      var message = ""; // 需要定义初始值 否则 如下 unde...
+      // var message; //undefined
+      for (var i = 0; i < names.length; i++) {
+        message += names[i]
+        // if (i === names.length -1) {
+        //   break;
+        // }
+        // message += "-";
+        if (i !== names.length-1) {
+          message += "-";
+        }
+      }
+      console.log(message);
+    </script>
+  </body>
+</html>

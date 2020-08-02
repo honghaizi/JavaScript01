@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组方法_push</title>
+  </head>
+  <body>
+    <script>
+      // 创建一个数组
+      var arr = ["孙悟空", "猪八戒", "沙和尚"];
+
+      /* push()
+        该方法可以向数组的末尾添加一个或多个元素，并返回数组的新的长度
+        可以将要添加的元素作为方法的参数传递
+        这样这些元素讲会自动添加到数组的末尾
+        该方法会将数组新的长度作为返回值返回
+      */
+      var result = arr.push("唐僧", "蜘蛛精", "白骨精", "玉兔精");
+      console.log(arr);
+      console.log("push = "+ result);
+    </script>
+  </body>
+</html>
