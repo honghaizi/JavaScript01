@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型-数字类型最大值和最小值</title>
+  </head>
+  <body>
+    <!-- 
+      JS中可以表示的数字的最大值
+        Number.MAX_VALUE
+          1.7976931348623157e+308
+        Number.MIN_VALUE 大于0的最小值
+          5e-324
+      如果使用Number表示的数字超过了最大值，则会返回一个
+        Infinity 表示正无穷
+        -Infinity 表示负无穷
+        使用typeof检查Infinity也会返回number
+      NaN 是一个特殊的数字，表示Not A Number
+        使用typeof检查一个NaN也会返回number
+     -->
+    <script>
+
+      // 表示的最大数字
+      console.log(Number.MAX_VALUE); // 1.7976931348623157e+308
+      // 表示的最小数字
+      console.log(Number.MIN_VALUE); // 5e-324
+
+      // JS中当对数值进行计算时没有结果返回 NAN
+      console.log(Number("abc")); // NaN
+
+      a = Number.MAX_VALUE * Number.MAX_VALUE; //Infinity
+      b = -Number.MAX_VALUE * Number.MAX_VALUE; //-Infinity
+      console.log(a);
+      console.log(b);
+
+      c = "abc" * "bcd"; // NaN
+      console.log(typeof a); //Number
+
+    </script>
+  </body>
+</html>

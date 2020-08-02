@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量-变量的定义方式</title>
+  </head>
+  <body>
+    
+    <script>
+
+      /*
+			 * 字面量，都是一些不可改变的值
+			 * 		比如 ：1 2 3 4 5 
+			 * 		字面量都是可以直接使用，但是我们一般都不会直接使用字面量
+			 * 
+			 * 变量    变量可以用来保存字面量，而且变量的值是可以任意改变的
+			 * 		变量更加方便我们使用，所以在开发中都是通过变量去保存一个字面量，
+			 * 		而很少直接使用字面量
+			 * 		可以通过变量对字面量进行描述
+			 */
+
+      // 1.定义变量赋值(常用)
+      // 1.1.变量的定义同时进行赋值
+      var name = "why"; // 定义初始值
+
+      // 1.2.给变量重新赋值
+      name = "kobe"; // 覆盖赋值
+
+      alert(name); // 弹窗输出
+      console.log(name); // 控制台输出
+
+
+      // 2.先定义(声明)，但是后面在进行赋值
+      var age; //定义声明变量名
+      age = 20; //赋值变量名
+
+      // 3.同时定义多个变量
+      var num1, num2, num3; //定义多个变量名
+      num1 = 20; //赋值
+      num2 = 30; //赋值
+      num3 = 40; //赋值
+
+      // 4.同时定义多个初始赋值
+      var numa = 20, numb = 30, numc = 40;
+      
+    </script>
+
+  </body>
+</html>

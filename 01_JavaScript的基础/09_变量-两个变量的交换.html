@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量-两个变量的交换</title>
+  </head>
+  <body>
+    
+    <script>
+
+      // 1.变量之间的相互命名
+      // var num1 = 20;
+      // var num2 = num1;
+      // console.log(num2);
+
+      // 2.练习：两个变量保存了两个数字，请对两个数字进行交换
+      var num1 = 100;
+      var num2 = 200;
+
+      // 2.1.交换方式一：利用临时变量对数字进行交换
+      var temp = num1; // 讲 num1 的值先赋值到临时变量
+      num1 = num2; //num1 为空，将 num2 的值赋值到 num1
+      num2 = temp; // num2 为空，将 temp(num1) 赋值到 num2
+      console.log(num1, num2)
+
+
+      // 2.2.交换方式二： 利用加减特性，对它们进行交换
+      // 不引入临时变量的情况下对两个数字进行交换 
+      num1 = num1 + num2; //num1: = 300
+      num2 = num1 - num2; //num2: = 100
+      num1 = num1 - num2; //num1: = 200
+      console.log(num1, num2);
+
+    </script>
+
+  </body>
+</html>

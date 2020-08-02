@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script标签的摆放位置</title>
+    <!--  这个位置不推荐
+      作为HTML文档内容的一部分，JavaScript默认遵循HTML文档的加载顺序，即自上而下的加载顺序
+
+      先加载了script，后加载了html元素 所以没有效果
+    -->
+    <!-- <script>
+      alert("Hello World");
+      document.querySelector(".title").onclick = function() {
+        alert("点击了h2元素")
+      }
+    </script> -->
+  </head>
+  <body>
+    <h2 class="title">hahahaha </h2>
+    <!--A html css 不区分大小写 -->
+    <H2></H2>
+    <p></p>
+    <div class="box">
+      <a href="#"></a>
+    </div>
+
+    <!-- 推荐位置 -->
+    <script>
+      // DOM操作：Document Object Manager
+      alert("Hello World");
+
+      // JS严格区分大小写
+      // ALERT("Hllo World 不会输出")
+
+      document.querySelector(".title").onclick = function() {
+        alert("点击了h2元素")
+      }
+    </script>
+    <!-- 推荐位置 -->
+    <script src=""></script>
+  </body>
+</html>

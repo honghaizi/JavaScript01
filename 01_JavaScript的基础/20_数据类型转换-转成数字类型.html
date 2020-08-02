@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型转换-转成数字类型</title>
+  </head>
+  <body>
+    <script>
+      //parseInt(string, radix)函数：将字符串转换成整数类型，radix表示基数，这里可以理解成进制
+      var str1 = "123";
+      var num1 = parseInt(str1);
+      console.log(num1, typeof num1); // 123 number
+
+      var str2 = "123.34";
+      var num2 = parseInt(str2);
+      console.log(num2, typeof num2); // 123 number
+
+      var str3 = "abc";
+      var num3 = parseInt(str3);
+      console.log(num3, typeof num3); // NaN number
+
+      var str4 = "abc123";
+      var num4 = parseInt(str4);
+      console.log(num4, typeof num4); // NaN number
+
+      var str5 = "123abc";
+      var num5 = parseInt(str5);
+      console.log(num5, typeof num5); // 123 number
+
+      // 如果对非String使用parseInt()或parseFloat()
+      // 它会先将其转换为String然后在操作
+      var str6 = true;
+      var num6 = parseInt(str6);
+      console.log(str6, typeof num6); // "true"
+      
+
+      //parseFloat(string)函数：将字符串转换成浮点类型(小数类型)
+      var s1 = "123.45";
+      var n1 = parseFloat(s1);
+      console.log(n1, typeof n1); // 123.45 number
+
+      var s2 = "123";
+      var n2 = parseFloat(s2);
+      console.log(n2, typeof n2); // 123 number
+
+      var s3 = "123.45.67";
+      var n3 = parseFloat(s3);
+      console.log(n3, typeof n3); // 123.45 number
+
+      // parseInt -> raix函数：radix表示基数,进制
+      // 16 代表 16进制 ，raix可传可不传
+      var str = "111";
+      console.log(parseInt(str, 16)); // 273
+            
+      // (method) Console.log(message?: any, ...optionalParams: any[]): void
+      // 可以传多个
+      console.log() 
+      // alert(message?: any): void
+      // 1个 或者是用+拼接
+      alert()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量-变量的命名规则</title>
+  </head>
+  <body>
+    
+    <script>
+
+      /* 变量名/标识符
+        1.在JS中所有的可以由我们自主命名的都可以称为是标识符
+
+        2.变量命名规则
+          标识符首字母(第一个字母)，必须是字母(a-z A-Z)或者 _ 或者 $,标识符不能以数字开头
+          标识符中可以含有字母、数字、_、$
+          标识符不能是ES中的关键字或保留字
+
+        3.什么是关键字？
+          * 关键字：解析代码时，这个单词有特殊的含义.
+          * 保留字：目前这些保留字还没有成为关键字，但是作用预留，以后有可能会升级为关键字
+
+        4.JS/ES底层保存标识符时实际上是采用的Unicode编码，所以理论上讲，所有的utf-8中含有的内容都可以作为标识符
+      */
+
+      var name = "why";
+      var num1 = 123;
+
+      // var this = 123;   //this 是关键字
+
+      //千万不要这么用
+			var 锄禾日当午 = 789;
+      console.log(锄禾日当午);
+    </script>
+
+  </body>
+</html>

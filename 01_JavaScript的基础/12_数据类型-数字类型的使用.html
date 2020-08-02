@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型-数字类型的使用</title>
+  </head>
+  <body>
+    <!-- 
+      在JS中所有的数值都是Number类型，包括整数和浮点数（小数）
+      typeof 运算符主要作用是检查一个变量的类型
+
+     -->
+    <script>
+
+      //1.数字类型的基本使用
+      var age = 20;
+      var height = 1.88;
+      var tel = 110;
+      console.log(typeof age); // number
+      console.log(typeof height); // number
+      console.log(typeof tel); // number
+      
+
+      // 2.其他进制
+      // 2.1.十六进制 #ff ff ff
+      // 2.2.八进制
+      // 2.3.二进制
+      var num1 = 100;
+      var num2 = 0x100;
+      var num3 = 0o10;
+      var num4 = 0b10;
+      console.log(num1);
+      console.log(num2);
+      console.log(num3);
+      console.log(num4);
+
+
+      //在JS中整数的运算基本可以保证精确
+      var cc = 1865789 + 7654321;
+      console.log(cc);      
+
+      /*
+			  如果使用JS进行浮点运算，可能得到一个不精确的结果
+			 	所以千万不要使用JS进行对精确度要求比较高的运算	
+      */
+			var c = 0.1 + 0.2;
+			console.log(c);
+
+    </script>
+  </body>
+</html>

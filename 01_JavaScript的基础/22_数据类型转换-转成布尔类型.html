@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型转换-转成布尔类型</title>
+  </head>
+  <!-- 将其他的数据类型转换为Boolean
+          使用Boolean()函数   
+            数字 -> 布尔
+            除了0和NaN，其余的都是true
+
+            字符串 -> 布尔
+            除了空串，其余的都是true
+
+            null和undefined都会转换为false
+            
+            对象也会转换为true
+  -->
+  <body>
+    <script>
+      // 转换布尔类型：Boolean(数据/变量)
+      // 非五个值：ture
+      console.log(Boolean("123")); // ture
+      console.log(Boolean(123)); // ture
+      console.log(Boolean()); // false
+      
+      // 五个值: "" 0 null undefined NaN
+      console.log(Boolean(""));  // false
+      console.log(Boolean(0));  // false
+      console.log(Boolean(null));  // false
+      console.log(Boolean(undefined));  // false
+      console.log(Boolean(NaN));  // false      
+    </script>
+  </body>
+</html>

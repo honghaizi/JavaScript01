@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型转换-转换成字符串</title>
+  </head>
+  <body>
+    <script>
+      var num = 123;
+      var obj = null;
+      var message = undefined;
+      var flag = true;
+
+      // 1.转换方式一：变量.toString();
+      console.log(num.toString()); // 123
+      // console.log(obj.toString()); null不适用
+      // console.log(message.toString());  undefined
+      console.log(flag.toString()); // true
+
+
+      // 2.转换方式二：String(变量)
+      console.log(String(num)); // 123
+      console.log(String(obj)); // null
+      console.log(String(message)); // undefined
+      console.log(String(flag)); // true
+
+      
+      // 3.转换方式三：和字符串进行拼接： 变量 + ""
+      // 隐式转换：其它的数据类型再和字符串通过+运算符进行拼接时，会自动转换成字符串类型
+      console.log(num + "gg"); // 123gg
+      console.log(obj + ""); // null
+      console.log(message + ""); // undefined
+      console.log(flag + "");  // true
+      
+    </script>
+  </body>
+</html>

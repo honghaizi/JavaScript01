@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript的编写位置</title>
+       <style>
+      /* h2 {
+
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- 1.在HTML元素中直接指向JavaScript代码  不推荐
+        虽然可以写在标签的属性中，但是他们属于结构与行为耦合，不方便维护，不推荐使用
+    -->
+    <button onclick="alert('我是一个弹窗')">弹出弹框</button>
+    <a href="javascript:alert('我也是弹窗')">我也是弹窗</a>
+    <!-- 这种形式经常用到，使用js处理一些效果 -->
+    <a href="javascript:;">你也点我一下</a>
+
+    <h2 style="color: red;"></h2>
+
+    <!-- 2.书写到script标签中   学习阶段-->
+    <script>
+      alert('我是直接弹出的弹窗')
+    </script>
+
+     <!-- 3.外部引用JavaScript文件    真实开发-->
+     <script src="./js/test.js"></script>
+  </body>
+</html>

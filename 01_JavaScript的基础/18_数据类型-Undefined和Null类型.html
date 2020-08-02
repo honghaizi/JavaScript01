@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型-Undefined和Null类型</title>
+  </head>
+  <body>
+    <!-- 
+      Undefined（未定义）类型的值只有一个，就undefind
+        当声明一个变量，但是并不给变量赋值时，它的值就是undefined
+      Null（空值）类型的值只有一个，就是null
+        null这个值专门用来表示一个为空的对象
+     -->
+    <script>
+      // 1.undefined(未定义): 当一个变量进行了声明,但是没有赋值, 这个时候它的值就是undefined
+      var flag;
+      console.log(flag); // 目前的值是undefined
+      //使用typeof检查一个undefined时也会返回undefined
+      console.log(typeof flag); // 类型是undefined
+
+      // 2.null(空):
+      var info = {name: "why", age: 18};
+      info = null;
+      //使用typeof检查一个null值时，会返回object
+      console.log(typeof info); // object
+      
+      // 了解
+      console.log(undefined == null); // true
+    </script>
+  </body>
+</html>
