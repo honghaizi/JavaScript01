@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数</title>
+  </head>
+  <body>
+    <script>
+      /*
+        创建一个Person构造函数
+          在Person构造函数中，为每一个对象都添加了一个sayName方法，
+
+          目前我们的方法是在构造函数内部创建的
+          也就是构造函数没执行一次就会创建一个新的sayName方法，也是所有实例的sayName都是唯一的
+
+          这样就导致了构造函数执行一次就会创建一个新的方法，
+          执行10000次就会创建10000个新的方法，而不10000个方法都是一模一样的
+          这是完全没有必要，完全可以使所有的对象共享同一个方法
+      */
+
+    /*//第一种方式，缺点重复
+      function Person(name, age, gender){
+				this.name = name;
+				this.age = age;
+				this.gender = gender;
+				//向对象中添加一个方法
+				this.sayName = function() {
+          alert("Hello大家好，我是: " + this.name);
+        };
+			}
+
+      //创建一个Person的实例
+      var per = new Person("孙悟空", 18, "男");
+      var per2 = new Person("猪八戒", 20, "公");
+      per.sayName();
+      per2.sayName();
+      // sayName都是唯一的
+      console.log(per.sayName == per2.sayName); //false
+    */
+
+
+    /*
+      //解决重复的方法一  全局作用域解决
+      function Person(name, age, gender){
+				this.name = name;
+				this.age = age;
+				this.gender = gender;
+				//向对象中添加一个方法
+				this.sayName = fun;
+			}
+
+      // 将sayName方法在全局作用域中定义
+      // 即使构造函数Person执行了无数次，该对象只执行一次，所有的实例调用都是同时指定同一个对象
+      // 将函数定义在全局作用域，污染了全局作用域的命名空间，而且定义在全局作用域中也很不安全，比如其它人取相同的名字覆盖掉..
+      function fun() {
+        alert("Hello大家好，我是: " + this.name);
+      };
+
+      //创建一个Person的实例
+      var per = new Person("孙悟空", 18, "男");
+      var per2 = new Person("猪八戒", 20, "公");
+      per.sayName();
+      per2.sayName();
+      // sayName都是唯一的
+      console.log(per.sayName == per2.sayName); //true
+    */
+
+
+    
+    //解决方法  原形prototype 
+    function Person(name, age, gender){
+      this.name = name;
+      this.age = age;
+      this.gender = gender;
+      // this.sayName = fun;
+    }
+    
+    // function fun() {
+    //   alert("Hello大家好，我是: " + this.name);
+    // };
+    //向原型中添加sayName方法
+    Person.prototype.sayName = function(){
+      alert("Hello大家好，我是:" + this.name);
+    };
+
+    //创建一个Person的实例
+    var per = new Person("孙悟空", 18, "男");
+    var per2 = new Person("猪八戒", 20, "公");
+    per.sayName();
+    per2.sayName();
+    // sayName都是唯一的
+    console.log(per.sayName == per2.sayName); //true
+    </script>
+  </body>
+</html>

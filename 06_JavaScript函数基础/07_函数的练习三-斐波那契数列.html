@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的练习三-斐波那契数列</title>
+  </head>
+  <body>
+    <script>
+      // 需求: 求一个斐波那契数
+      // 1.方式一: for循环实现
+      // 1 1 2 3 5 8 13 21 34.......
+      // n=0
+      // n=1
+      // n=2
+      // n=3
+      // n=4
+      function fib(n) {
+        if (n === 0 || n ===1) {
+          return 1;
+        }
+        var num1 = 1;
+        var num2 = 1;
+        var sum = 2;
+        for (var i = 2; i < n; i++) {
+          num1 = num2;
+          num2 = sum;
+          sum = num1 + num2;
+        }
+        return sum;
+      }
+      console.log(fib(0));
+      console.log(fib(1));
+      console.log(fib(2));
+      console.log(fib(3));
+      console.log(fib(4));
+      console.log(fib(5));
+      console.log(fib(6));
+      console.log(fib(7));
+      /*
+      function fib(n) {    -> 5 传入
+        if (n === 0 || n ===1) { -> 5 不满足跳过
+          return 1;
+        }
+        var num1 = 1; 
+        var num2 = 1;
+        var sum = 2;
+        for (var i = 2; i < n; i++) { 
+        for (var i = 2; i < 5; i++) { -> 2<5 -> 3 < 5 
+          num1 = num2; -> 1 -> 2
+          num2 = sum; -> 2 -> 3
+          sum = num1 + num2; ->3 -> 5 
+        }
+        return sum; -> 3 -> 3 < 5 再次循环 -> 5 结束循环
+      }
+      */
+      
+
+      // 2.方式二: 递归调用方式
+      // 什么递归调用
+      // 2.1.一个函数中可以去调用另外一个函数
+      function test1() {
+        console.log("test1被调用");
+        test2();        
+      }
+      function test2() {
+        console.log("test2被调用");
+      }
+
+      // debugger;
+      test1();
+
+      // 2.2.函数自己调用自己: 递归调用
+      /*
+      在开发中尽量避免使用递归:
+        1.递归如果没有写好结束条件, 意味着会无限调用
+        2.递归调用非常占据栈空间内存(空间复杂度)/效率比较低(时间复杂度)
+      */
+      // function test() {
+      //   console.log("test被调用");
+      //   test();
+      // }
+      // test();
+
+
+      // 2.3.使用递归调用实现斐波那契数列
+      function fib2(n) {
+        debugger;
+        if (n === 0 || n === 1) {
+          return 1;
+        }
+        return fib2(n-1) + fib2(n-2);
+      }
+
+      console.log(fib2(5));
+
+      fib2(5);
+
+      // 0: 1  n===0 - > 1
+      // 1: 1  n===1 - > 1
+      // 2: 2  fib2(2-1): 1  ->  fib2(2-2); 0=1 = 1+1=2
+      // 3: 3  fib2(3-1): 2  ->  fib2(3-2); 1 = 2+1=3
+      // 4: 5  fib2(4-1): 3  ->  fib2(4-2); 2 = 3+2=5
+      // 5: 8  fib2(5-1): 4  ->  fib2(5-2); 3 = 4+3=7 ..
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的练习二</title>
+  </head>
+  <body>
+    <script>
+      // 1.练习四: 定义函数, 传入一个n, 计算1~n数字的和
+      function calcNSum (n) {
+        var total = 0;
+        for (var i = 1; i <= n; i++) {
+          total += i;
+        }
+        return total;
+      }
+      // 1 2 3 4 5: 15
+      var result1 = calcNSum(5);
+      var result2 = calcNSum(100);
+      console.log(result1);
+      console.log(result2);
+
+
+      // 2.练习五: 定义一个函数, 传入一个数组, 对数组进行反转
+      //普通形式1
+      var nums = [10, 14, 8, 5, 88];
+      for (var i = 0; i < nums.length / 2; i++) {
+        var temp = nums[i];
+        nums[i] = nums[nums.length-1-i];
+        nums[nums.length-1-i] = temp;
+      }
+      console.log(nums);
+      //普通形式2   重复效率低
+      var nums2 = [20, 76, 44, 67, 23];
+      for (var i = 0; i < nums2.length / 2; i++) {
+        var temp = nums2[i];
+        nums2[i] = nums2[nums2.length-1-i];
+        nums2[nums2.length-1-i] = temp;
+      }
+      console.log(nums2);
+
+
+      // 合理写法
+      function reverseArray(arr) {
+        for (var i = 0; i < arr.length / 2; i++) {
+          var temp = arr[i];
+          arr[i] = arr[arr.length-1-i];
+          arr[arr.length-1-i] = temp;
+        }
+        return arr;
+      }
+
+      // 将nums的值放入函数方法中，这样灵活
+      var nums1 = [10, 14, 8, 5, 88];
+      nums1 = reverseArray(nums1);
+      console.log(nums1);
+      
+      var nums2 = [20, 76, 44, 67, 23];
+      nums2 = reverseArray(nums2);
+      console.log(nums2);
+    </script>
+  </body>
+</html>

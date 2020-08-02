@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的声明提前</title>
+  </head>
+  <body>
+    <script>
+      /* 函数的声明提前
+			 	使用函数声明形式创建的函数 function 函数(){}
+
+			  它会在所有的代码执行之前就被创建，所以我们可以在函数声明前来调用函数
+        function fun(){
+				  console.log("我是一个fun函数");
+			  }
+
+			  使用函数表达式创建的函数，不会被声明提前，所以不能在声明前调用
+        var fun2 = function(){
+				  console.log("我是fun2函数");
+			  };
+			 */
+
+      fun(); // 我是一个fun函数 // 先创建
+			fun2(); //  Uncaught TypeError: fun2 is not a function at  报错
+
+			//函数声明，会被提前创建
+			function fun(){
+				console.log("我是一个fun函数");
+			}
+			
+			//函数表达式，不会被提前创建
+			var fun2 = function(){
+				console.log("我是fun2函数");
+			};
+			
+			// fun2(); //我是fun2函数
+    </script>
+  </body>
+</html>

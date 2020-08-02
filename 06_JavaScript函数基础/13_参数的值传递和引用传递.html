@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参数的值传递和引用传递</title>
+  </head>
+  <body>
+    <script>
+      // 1.值传递
+      // function test(name) {
+      //   name = "kobe";
+      // }
+
+      // var temp = "why";
+      // test(temp);
+      // console.log(temp);
+
+      // 2.引用传递  指针
+      function test(arr) {
+        arr[0] = "abc";
+      }
+
+      var temp = [10, 20, 30];
+      test(temp);
+      console.log(temp);
+    </script>
+  </body>
+</html>

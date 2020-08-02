@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数作用域的练习</title>
+  </head>
+  <body>
+    <script>
+      var a = 123;
+      function fun() {
+        // 函数作用域没有 全局找
+        alert(a);
+      }
+      func(); // 123
+
+
+      var b = 123;
+      function fun() {
+        alert(b); //undefined 变量没提前声明
+        var b = 456; //修改局部的 对全局没有影响
+      }
+      fun();
+      alert(b); //123
+
+
+      var c = 123; 
+      function fun() {
+        alert(c); //123
+        c = 456; // 局部没有，找全局，全局变成 456
+      }
+      fun();
+      alert(c); //456
+
+
+      var d = 123;
+      function fun(d) {
+        alert(d);
+        d = 456; // 局部有 d ，局部456
+      }
+      fun();
+      alert(d); //不受局部影响，123 
+
+
+      var e = 123;
+      function fun(e) {
+        alert(e); // 123
+        e = 456; // 123 改为 456
+      }
+      fun(123); // 传入局部 123
+      alert(e); //不受局部影响，123 
+    </script>
+  </body>
+</html>
