@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赋值运算符-使用过程</title>
+  </head>
+  <body>
+    <script>
+      // 1.定义变量
+      var num1 = 20;
+      var num2 = 6;
+
+      // 2.赋值运算符
+      // 20 + 6 = 26
+      num1 = num1 + num2; // 26
+
+      //等同 num1(26) = num1(20) + num2(6);
+      num1 += num2; // 26 
+
+      //等同 num1(14) = num1(20) - num2(6);
+      num1 -= num2; // 14
+
+      //等同 num1(120) = num1(20) * num2(6);
+      num1 *= num2; // 120
+
+      //等同 num1(3.333...) = num1(20) / num2(6);
+      num1 /= num2; // 3.333
+
+      //等同 num1(2) = num1(20) % num2(6);
+      abc = num1 %= num2; // 2
+      console.log(abc);
+    </script>
+  </body>
+</html>

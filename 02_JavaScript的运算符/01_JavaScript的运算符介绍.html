@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript的运算符介绍</title>
+  </head>
+  <body>
+    <!--  运算符也叫操作符
+      通过运算符可以对一个或多个值进行运算,并获取运算结果
+        比如：typeof就是运算符，可以来获得一个值的类型,它会将该值的类型以字符串的形式返回
+        number string boolean undefined object
+     -->
+    <script>
+      var a = 123;
+      var result = typeof a;
+      console.log(typeof result); // string
+
+      var num1 = 20;
+      var num2 = 30;
+      // + * 就是运算符
+      var result1 = num1 + num2;
+      var result2 = num1 * num2;
+      console.log(result1, result2); // 50 600
+      
+      //  比较大小
+      var flag = num1 > num2; //false
+      console.log(flag); // false
+
+      // + 拼接作用
+      var str1 = "Hello ";
+      var str2 = "World";
+      var message = str1 + str2;
+      console.log(message); // Hello World
+    </script>
+  </body>
+</html>
